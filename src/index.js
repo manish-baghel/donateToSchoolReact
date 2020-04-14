@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
-
+// Comment for poerline status check
 ReactDOM.render((
   <Provider store={store}>
   	<ConnectedRouter history={history}>
