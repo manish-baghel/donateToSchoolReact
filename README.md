@@ -8,7 +8,7 @@ This repository contains UI for Donate to School Application.
 |Framework|[ReactJS](https://reactjs.org/)|
 |---|---|
 |Bundler|[ParcelJS](https://parceljs.org/)|
-|CSS|[Tailwind CSS](tailwindcss.com/)|
+|CSS|[Tailwind CSS](https://tailwindcss.com/)|
 
 ## Installation
   Run `npm install` or `yarn` in the root directory of the project.  
