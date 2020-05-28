@@ -1,5 +1,5 @@
 # Donate To School - UI [ React ]
---
+
 
 This repository contains UI for Donate to School Application.
 
@@ -34,3 +34,11 @@ This repository contains UI for Donate to School Application.
   For more options on build or serve - Run `parcel help serve` or `parcel help build`
 
 ## Screens
+
+![](https://github.com/manish-baghel/donateToSchoolReact/raw/master/screens/lg-screen.png)
+
+Small Screen : ![](https://github.com/manish-baghel/donateToSchoolReact/raw/master/screens/sm-screen.png)
+
+![](https://github.com/manish-baghel/donateToSchoolReact/raw/master/screens/sm-md-screen.png)
+
+NavBar Menu : ![](https://github.com/manish-baghel/donateToSchoolReact/raw/master/screens/sm-navbar.png)
