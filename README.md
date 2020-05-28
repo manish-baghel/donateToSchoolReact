@@ -21,9 +21,9 @@ This repository contains UI for Donate to School Application.
   **```npm start```**
       
   It executes -   
-  `parcel src/index.html --log-level 2`  
+  `parcel src/index.html --log-level 3`  
   
-  Here `--log-level=2` gives errors and warnings  
+  Here `--log-level=3` gives info [errors and warnings]  
   Use `--log-level=4` for verbose logging
   
   
