@@ -1,17 +1,11 @@
 import React from "react";
-import Banner, {LandingSection, TeamSection} from "./Banner";
+import Landing from "./LandingPage";
 import "../app.css";
-import Footer from "./Footer";
 
 function App() {
   return (
     <>
-      <Banner />
-      <LandingSection />
-      <LandingSection direction="reverse"/>
-      <LandingSection />
-      <TeamSection />
-      <Footer />
+      <Landing />
     </>
   );
 }
