@@ -1,12 +1,19 @@
 import React from "react";
 import Landing from "./LandingPage";
+import {Route, Switch} from "react-router";
 import "../app.css";
+import Login from "./Login";
 
 function App() {
   return (
-    <>
-      <Landing />
-    </>
+    <Switch>
+      <Route exact path="/">
+        <Landing />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+    </Switch>
   );
 }
 

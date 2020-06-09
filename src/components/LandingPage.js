@@ -10,17 +10,17 @@ export const LandingSection = (props) => {
   return (
     <section className="relative py-20">
       <div className="container mx-auto md:px-2 px-4 lg:px-4">
-        <div className={`items-center flex flex-wrap ${direction}`}>
-          <div className="w-10/12 md:w-5/12 lg:w-4/12 ml-auto mr-auto px-4">
+        <div className={ `items-center flex flex-wrap ${direction}`}>
+          <div className="w-8/12 sm:w-5/12 lg:w-4/12 ml-auto mr-auto p-8">
             <img alt="..." className="max-w-full rounded-lg shadow-lg" src={imgUrl} />
           </div>
-          <div className="w-10/12 md:w-5/12 lg:2-5/12 ml-auto mr-auto px-4 pt-6 md:pt-0">
+          <div className="w-10/12 sm:w-6/12 lg:2-5/12 ml-auto mr-auto px-4 pt-6 md:pt-0">
             <div className="md:pr-12">
               <div className="text-indigo-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-indigo-300">
                 <i className="fas fa-rocket text-xl"></i>
               </div>
               <h3 className="text-3xl font-semibold">Small Heading</h3>
-              <p className="mt-4 text-lg leading-relaxed text-gray-600">
+              <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-600">
                 Some content about something worth taking three lines, may contain 26 - 30 words
                 just enough to make it look relevant and short like this.
               </p>

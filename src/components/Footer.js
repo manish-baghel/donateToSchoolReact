@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
-            <div className="w-full lg:w-6/12 px-4">
+            <div className="w-full mb-6 lg:w-6/12 px-4">
               <h4 className="text-3xl font-semibold">A Govt. Of India Initiative</h4>
               <h5 className="text-lg mt-0 mb-2 text-gray-700">Collaboration with Indian Institute of Technology Delhi</h5>
               <div className="mt-6">
