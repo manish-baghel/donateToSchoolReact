@@ -16,6 +16,7 @@ function login(data) {
     userService.login(email, password).then((resp) => {
       if (resp.status) {
         dispatch(success(resp.data));
+        dispatch(alertActions.success(resp.msg));
         history.push('/');
       } else {
         dispatch(failure(resp.msg))
