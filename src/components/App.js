@@ -3,6 +3,7 @@ import Landing from "./LandingPage";
 import {Router, Route, Switch} from "react-router-dom";
 import "../app.css";
 import Login from "./Login";
+import Signup from "./Signup";
 import {history} from "../configureStore";
 import ReduxToastr from "react-redux-toastr";
 
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </Router>

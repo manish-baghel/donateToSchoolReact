@@ -5,6 +5,7 @@ import {history} from "../configureStore";
 
 export const userActions = {
   login,
+  signup,
   logout,
 };
 
@@ -37,6 +38,36 @@ function login(data) {
   }
   function failure(error) {
     return {type: userConstants.LOGIN_FAILURE, error};
+  }
+}
+
+function signup(data){
+  return (dispatch) => {
+    dispatch(request(data));
+    userService.signup(data)
+      .then((resp) => {
+        if(resp.status) {
+          dispatch(success(resp.data));
+          history.push("/");
+          dispatch(alertActions.success(resp.msg));
+        }
+        else {
+          dispatch(failure(resp.msg));
+          dispatch(alertActions.error(resp.msg));
+        }
+      })
+      .catch(err => {
+        dispatch(alertActions.error(err.message));
+      });
+  };
+  function request(user) {
+    return {type: userConstants.SIGNUP_REQUEST, user};
+  }
+  function success(user) {
+    return {type: userConstants.SIGNUP_SUCCESS, user};
+  }
+  function failure(error) {
+    return {type: userConstants.SIGNUP_FAILURE, error};
   }
 }
 
