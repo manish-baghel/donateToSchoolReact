@@ -9,20 +9,25 @@ export const userActions = {
 };
 
 function login(data) {
-  const {email,password} = data;
+  const {email, password} = data;
   return (dispatch) => {
     dispatch(request({email}));
 
-    userService.login(email, password).then((resp) => {
-      if (resp.status) {
-        dispatch(success(resp.data));
-        dispatch(alertActions.success(resp.msg));
-        history.push('/');
-      } else {
-        dispatch(failure(resp.msg))
-        dispatch(alertActions.error(resp.msg));
-      }
-    });
+    userService
+      .login(email, password)
+      .then((resp) => {
+        if (resp.status) {
+          dispatch(success(resp.data));
+          history.push("/");
+          dispatch(alertActions.success(resp.msg));
+        } else {
+          dispatch(failure(resp.msg));
+          dispatch(alertActions.error(resp.msg));
+        }
+      })
+      .catch((err) => {
+        dispatch(alertActions.error(err.message));
+      });
   };
   function request(user) {
     return {type: userConstants.LOGIN_REQUEST, user};
@@ -36,6 +41,12 @@ function login(data) {
 }
 
 function logout() {
-  userService.logout();
-  return {type: userConstants.LOGOUT};
+  return (dispatch) => {
+    userService.logout();
+    dispatch(success());
+    dispatch(alertActions.success("Logged out Succesfully"));
+  };
+  function success() {
+    return {type: userConstants.LOGOUT};
+  }
 }

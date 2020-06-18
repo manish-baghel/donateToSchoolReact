@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import Transition from "./Transition";
-import Mainlogo from '../../public/logo.svg';
+import Mainlogo from "../../public/logo.svg";
+import {connect} from "react-redux";
+import {userActions} from "../actions/userActions";
 
 const Navlink = (props) => {
-  let color = props.title==="Login/Signup"?"text-indigo-600":"text-gray-700";
-  let colorFocus = props.title==="Login/Signup"?"text-indigo-900":"text-gray-900";
+  let color = props.title === "Login/Signup" ? "text-indigo-600" : "text-gray-700";
+  let colorFocus = props.title === "Login/Signup" ? "text-indigo-900" : "text-gray-900";
   return (
     <a
       href={props.link}
@@ -16,8 +18,9 @@ const Navlink = (props) => {
   );
 };
 
-const Navbar = () => {
+const NavbarComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { logout } = props;
   return (
     <>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -25,11 +28,7 @@ const Navbar = () => {
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <a href="#">
-                <img
-                  className="h-12 w-auto sm:h-16"
-                  src={Mainlogo}
-                  alt=""
-                />
+                <img className="h-12 w-auto sm:h-16" src={Mainlogo} alt="" />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
                 <button
@@ -54,7 +53,20 @@ const Navbar = () => {
             <Navlink link="/Donate" title="Donate" />
             <Navlink link="/Volunteer" title="Volunteer" />
             <Navlink link="/FindSchool" title="Find A School" />
-            <Navlink link="/Login" title="Login/Signup" />
+            {props.user ? (
+              <>
+                <Navlink link="/profile" title="Profile" />
+                <button
+                  onClick={() => logout()}
+                  className="mt-1 mr-3 block px-3 py-2 rounded-md text-base font-medium
+                      text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 focus:outline-none
+                      focus:text-indigo-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Navlink link="/login" title="Login/Signup" />
+            )}
           </div>
         </nav>
       </div>
@@ -95,7 +107,20 @@ const Navbar = () => {
                 <Navlink link="/Donate" title="Donate" />
                 <Navlink link="/Volunteer" title="Volunteer" />
                 <Navlink link="/FindSchool" title="Find A School" />
-                <Navlink link="/Login" title="Login/Signup" />
+                {props.user ? (
+                  <>
+                    <Navlink link="/profile" title="Profile" />
+                    <button
+                      onClick={() => logout()}
+                      className="mt-1 mr-3 block px-3 py-2 rounded-md text-base font-medium
+                      text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 focus:outline-none
+                      focus:text-indigo-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <Navlink link="/login" title="Login/Signup" />
+                )}
               </div>
             </div>
           </div>
@@ -105,4 +130,13 @@ const Navbar = () => {
   );
 };
 
+function mapStateToProps(state) {
+  return {
+    user: state.authentication.user,
+  };
+}
+const actionCreators = {
+  logout: userActions.logout,
+};
+const Navbar = connect(mapStateToProps, actionCreators)(NavbarComponent);
 export default Navbar;

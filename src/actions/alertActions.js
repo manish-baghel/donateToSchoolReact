@@ -1,19 +1,20 @@
 import { alertConstants } from '../constants';
+import { toastr } from "react-redux-toastr";
 
 export const alertActions = {
     success,
-    error,
-    clear
+    error
 };
 
 function success(message) {
-    return { type: alertConstants.SUCCESS, message };
+  return (dispatch) => {
+    toastr.info("Success",message);
+  }
 }
 
 function error(message) {
-    return { type: alertConstants.ERROR, message };
+  return (dispatch) => {
+    toastr.info("Error",message);
+  }
 }
 
-function clear() {
-    return { type: alertConstants.CLEAR };
-}
