@@ -5,8 +5,8 @@ import {connect} from "react-redux";
 import {userActions} from "../actions/userActions";
 
 const Navlink = (props) => {
-  let color = props.title === "Login/Signup" ? "text-indigo-600" : "text-gray-700";
-  let colorFocus = props.title === "Login/Signup" ? "text-indigo-900" : "text-gray-900";
+  let color = /Login|Signup/.test(props.title) ? "text-indigo-600" : "text-gray-700";
+  let colorFocus =  /Login|Signup/.test(props.title) ? "text-indigo-900" : "text-gray-900";
   return (
     <a
       href={props.link}
@@ -20,14 +20,14 @@ const Navlink = (props) => {
 
 const NavbarComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { logout } = props;
+  const {logout} = props;
   return (
     <>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
         <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
+              <a href="/">
                 <img className="h-12 w-auto sm:h-16" src={Mainlogo} alt="" />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
@@ -52,7 +52,7 @@ const NavbarComponent = (props) => {
           <div className="hidden md:flex md:ml-10 md:pr-4">
             <Navlink link="/Donate" title="Donate" />
             <Navlink link="/Volunteer" title="Volunteer" />
-            <Navlink link="/FindSchool" title="Find A School" />
+            <Navlink link="/FindSchool" title="Schools" />
             {props.user ? (
               <>
                 <Navlink link="/profile" title="Profile" />
@@ -65,7 +65,10 @@ const NavbarComponent = (props) => {
                 </button>
               </>
             ) : (
-              <Navlink link="/login" title="Login/Signup" />
+              <>
+                <Navlink link="/login" title="Login" />
+                <Navlink link="/signup" title="Signup" />
+              </>
             )}
           </div>
         </nav>
@@ -106,7 +109,7 @@ const NavbarComponent = (props) => {
               <div className="px-2 pt-2 pb-3">
                 <Navlink link="/Donate" title="Donate" />
                 <Navlink link="/Volunteer" title="Volunteer" />
-                <Navlink link="/FindSchool" title="Find A School" />
+                <Navlink link="/FindSchool" title="Schools" />
                 {props.user ? (
                   <>
                     <Navlink link="/profile" title="Profile" />
@@ -119,7 +122,10 @@ const NavbarComponent = (props) => {
                     </button>
                   </>
                 ) : (
-                  <Navlink link="/login" title="Login/Signup" />
+                  <>
+                    <Navlink link="/login" title="Login" />
+                    <Navlink link="/signup" title="Signup" />
+                  </>
                 )}
               </div>
             </div>

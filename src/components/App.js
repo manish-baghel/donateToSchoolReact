@@ -6,6 +6,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import {history} from "../configureStore";
 import ReduxToastr from "react-redux-toastr";
+import Requirements from "./Requirements";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/requirements">
+            <Requirements />
           </Route>
         </Switch>
       </Router>

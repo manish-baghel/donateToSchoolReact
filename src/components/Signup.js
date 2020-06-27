@@ -28,7 +28,9 @@ const SignupComponent = (props) => {
                   name="first_name"
                   type="text"
                   ref={register({required: true})}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="First Name"
                 />
               </div>
@@ -38,7 +40,9 @@ const SignupComponent = (props) => {
                   name="last_name"
                   type="text"
                   ref={register({required: true})}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Last Name"
                 />
               </div>
@@ -48,7 +52,9 @@ const SignupComponent = (props) => {
                   name="phone"
                   type="text"
                   ref={register({required: true, pattern: /^[0-9]{10}$/i})}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Contact Number"
                 />
               </div>
@@ -58,7 +64,9 @@ const SignupComponent = (props) => {
                   name="gender"
                   type="text"
                   ref={register({required: true})}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Gender"
                 />
               </div>
@@ -68,7 +76,9 @@ const SignupComponent = (props) => {
                   name="email"
                   type="email"
                   ref={register({required: true, pattern: /^\S+@\S+$/i})}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Email address"
                 />
               </div>
@@ -79,7 +89,9 @@ const SignupComponent = (props) => {
                   type="password"
                   required
                   ref={register}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="appearance-none mb-2 rounded relative block w-full px-3 py-2 border
+                  border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+                  focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Password"
                 />
               </div>
@@ -130,7 +142,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  signup: userActions.signup
+  signup: userActions.signup,
 };
 
 const Signup = connect(mapStateToProps, actionCreators)(SignupComponent);
