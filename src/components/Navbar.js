@@ -21,14 +21,15 @@ const Navlink = (props) => {
 const NavbarComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const {logout} = props;
+  const shadow = props.shadow?props.shadow:false;
   return (
     <>
-      <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
-        <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start">
+      <div className={`relative py-3 px-4 sm:px-6 lg:px-8 ${shadow?"shadow bg-white":""}`}>
+        <nav className="relative flex items-center justify-between sm:h-14 lg:justify-start">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <a href="/">
-                <img className="h-12 w-auto sm:h-16" src={Mainlogo} alt="" />
+                <img className="h-12 w-auto sm:h-14" src={Mainlogo} alt="" />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
                 <button
@@ -50,7 +51,7 @@ const NavbarComponent = (props) => {
             </div>
           </div>
           <div className="hidden md:flex md:ml-10 md:pr-4">
-            <Navlink link="/Donate" title="Donate" />
+            <Navlink link="/requirements" title="Donate" />
             <Navlink link="/Volunteer" title="Volunteer" />
             <Navlink link="/FindSchool" title="Schools" />
             {props.user ? (
@@ -107,7 +108,7 @@ const NavbarComponent = (props) => {
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3">
-                <Navlink link="/Donate" title="Donate" />
+                <Navlink link="/requirements" title="Donate" />
                 <Navlink link="/Volunteer" title="Volunteer" />
                 <Navlink link="/FindSchool" title="Schools" />
                 {props.user ? (

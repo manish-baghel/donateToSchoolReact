@@ -7,6 +7,7 @@ import Signup from "./Signup";
 import {history} from "../configureStore";
 import ReduxToastr from "react-redux-toastr";
 import Requirements from "./Requirements";
+import RequirementPage from "./RequirementPage";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/requirements">
             <Requirements />
+          </Route>
+          <Route path="/req">
+            <RequirementPage />
           </Route>
         </Switch>
       </Router>

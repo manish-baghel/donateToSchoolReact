@@ -6,6 +6,7 @@ import Preloader from "./Preloader";
 const Requirement = (props) => {
   const {req} = props;
   return (
+    <a href={`/req?id=${req._id}`}>
     <div className="py-8 flex border-t-2 border-gray-200 flex-wrap md:flex-no-wrap">
       <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span className="tracking-widest font-medium title-font text-gray-900">
@@ -32,6 +33,7 @@ const Requirement = (props) => {
         </a>
       </div>
     </div>
+  </a>
   );
 };
 
@@ -50,10 +52,11 @@ const RequirementsComponent = (props) => {
   const {allReqs} = props;
   return (
     <>
-      <Preloader />
-      <Navbar />
+      <Preloader type="requirements"/>
+      <Navbar shadow={true}/>
       <div className="container px-5 py-24 mx-auto">
         <div className="-my-8">
+          <h2 className="text-gray-900 text-2xl md:text-4xl mb-2">Requirements</h2>
           <RequirementList allReqs={allReqs} />
         </div>
       </div>
