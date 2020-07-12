@@ -15,6 +15,16 @@ export function requirements(state = initialState, action) {
       };
     case reqConstants.REQS_GETALL_FAILURE:
       return {};
+    case reqConstants.REQ_COMMIT_REQUEST:
+      return Object.assign({}, state, {
+        req_committing:action.payload.req_id
+      });
+    case reqConstants.REQ_COMMIT_SUCCESS:
+      return Object.assign({}, state, {
+        req_committed:action.payload.req_id
+      });
+    case reqConstants.REQ_COMMIT_FAILURE:
+      return state;
     default:
       return state;
   }

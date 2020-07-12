@@ -4,6 +4,7 @@ import {reqConstants} from "../constants";
 
 export const reqActions = {
   allReq,
+  commitReq
 };
 
 function allReq() {
@@ -28,5 +29,31 @@ function allReq() {
   }
   function failure(error) {
     return {type: reqConstants.REQS_GETALL_FAILURE, error};
+  }
+}
+
+
+function commitReq(req_id) {
+  return (dispatch) => {
+    dispatch(request());
+
+    reqService.commitReq(req_id).then((resp) => {
+      if (resp.status) {
+        dispatch(success(JSON.parse(resp.data)));
+      } else {
+        dispatch(failure(resp.msg));
+      }
+    }).catch(err => {
+      dispatch(alertActions.error(err.message));
+    });
+  };
+  function request() {
+    return {type: reqConstants.REQ_COMMIT_REQUEST};
+  }
+  function success(allReqs) {
+    return {type: reqConstants.REQ_COMMIT_SUCCESS, data};
+  }
+  function failure(error) {
+    return {type: reqConstants.REQ_COMMIT_FAILURE, error};
   }
 }
