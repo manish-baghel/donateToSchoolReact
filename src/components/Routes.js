@@ -14,22 +14,22 @@ const Routes = (props) => {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path="/">
+        <Route exact path={process.env.PUBLIC_URL+"/"}>
           <Landing />
         </Route>
-        <Route path="/login">
+        <Route path={process.env.PUBLIC_URL+"/login"}>
           <Login />
         </Route>
-        <Route path="/signup">
+        <Route path={process.env.PUBLIC_URL+"/signup"}>
           <Signup />
         </Route>
-        <Route path="/requirements">
+        <Route path={process.env.PUBLIC_URL+"/requirements"}>
           <Requirements category="requirement"/>
         </Route>
-        <Route path="/volunteer">
+        <Route path={process.env.PUBLIC_URL+"/volunteer"}>
           <Requirements category="volunteer"/>
         </Route>
-        <PrivateRoute path="/req" currentUser={props.currentUser}>
+        <PrivateRoute path={process.env.PUBLIC_URL+"/req"} currentUser={props.currentUser}>
           <RequirementPage />
         </PrivateRoute>
       </Switch>
