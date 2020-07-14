@@ -65,7 +65,7 @@ const LoginComponent = props => {
               <div className="text-sm leading-5">
                 <a
                   target="_blank"
-                  href="/forgot_password"
+                  href={process.env.PUBLIC_URL+"/forgot_password"}
                   className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
                 >
                   Forgot your password?

@@ -58,28 +58,28 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="/about">
+                        href={process.env.PUBLIC_URL+"/about"}>
                         About Us
                       </a>
                     </li>
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="/blog">
+                        href={process.env.PUBLIC_URL+"/blog"}>
                         Blog
                       </a>
                     </li>
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="/donors">
+                        href={process.env.PUBLIC_URL+"/donors"}>
                         Donors
                       </a>
                     </li>
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="/initiatives">
+                        href={process.env.PUBLIC_URL+"/initiatives"}>
                         Other Initiatives
                       </a>
                     </li>
