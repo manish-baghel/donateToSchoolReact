@@ -7,7 +7,7 @@
     "parcel": "parcel src/index.html --out-dir docs --log-level 4",
     "parcel:serve": "parcel src/index.html --out-dir docs --log-level 4",
     "parcel:build": "parcel build src/index.html --out-dir docs --no-source-maps --log-level 4",
-    "parcel:build:gh": "parcel build src/index.html --out-dir docs --no-source-maps --public-url https://manish-baghel.github.io/donateToSchoolReact/docs --log-level 4",
+    "parcel:build:gh": "parcel build src/index.html --out-dir docs --no-source-maps --public-url https://manish-baghel.github.io/donateToSchoolReact --log-level 4",
     "clean": "rm -rf dist docs *.log",
     "start": "npm run clean && npm run parcel:serve",
     "start-nv": "ENV='dev' && npm run clean && npm run parcel",
