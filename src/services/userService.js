@@ -1,4 +1,5 @@
-const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
+// const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
+const apiUrl = process.env.SERVER_URL;
 export const userService = {
   login,
   signup,
@@ -46,6 +47,7 @@ function signup(data) {
       password,
     }),
   };
+  console.log(options);
   return fetch(url, options)
     .then((resp) => resp.json())
     .then((json) => {

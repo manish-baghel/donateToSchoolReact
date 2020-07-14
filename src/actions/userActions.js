@@ -11,6 +11,8 @@ export const userActions = {
 
 function login(data) {
   const {email, password} = data;
+  const location = history.location;
+  const {from} = location.state || {from : {pathname:"/"}};
   return (dispatch) => {
     dispatch(request({email}));
 
@@ -19,7 +21,7 @@ function login(data) {
       .then((resp) => {
         if (resp.status) {
           dispatch(success(resp.data));
-          history.push("/");
+          history.replace(from);
           dispatch(alertActions.success(resp.msg));
         } else {
           dispatch(failure(resp.msg));

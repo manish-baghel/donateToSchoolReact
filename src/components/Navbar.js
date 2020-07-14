@@ -52,9 +52,9 @@ const NavbarComponent = (props) => {
           </div>
           <div className="hidden md:flex md:ml-10 md:pr-4">
             <Navlink link="/requirements" title="Donate" />
-            <Navlink link="/Volunteer" title="Volunteer" />
-            <Navlink link="/FindSchool" title="Schools" />
-            {props.user ? (
+            <Navlink link="/volunteer" title="Volunteer" />
+            {//<Navlink link="/FindSchool" title="Schools" />
+            props.user ? (
               <>
                 <Navlink link="/profile" title="Profile" />
                 <button
@@ -110,8 +110,8 @@ const NavbarComponent = (props) => {
               <div className="px-2 pt-2 pb-3">
                 <Navlink link="/requirements" title="Donate" />
                 <Navlink link="/Volunteer" title="Volunteer" />
-                <Navlink link="/FindSchool" title="Schools" />
-                {props.user ? (
+                {// <Navlink link="/FindSchool" title="Schools" />
+                props.user ? (
                   <>
                     <Navlink link="/profile" title="Profile" />
                     <button

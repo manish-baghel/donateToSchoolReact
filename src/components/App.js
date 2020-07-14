@@ -1,36 +1,12 @@
 import React from "react";
-import Landing from "./LandingPage";
-import {Router, Route, Switch} from "react-router-dom";
 import "../app.css";
-import Login from "./Login";
-import Signup from "./Signup";
-import {history} from "../configureStore";
 import ReduxToastr from "react-redux-toastr";
-import Requirements from "./Requirements";
-import RequirementPage from "./RequirementPage";
+import Routes from "./Routes";
 
 function App() {
   return (
     <>
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/requirements">
-            <Requirements />
-          </Route>
-          <Route path="/req">
-            <RequirementPage />
-          </Route>
-        </Switch>
-      </Router>
+      <Routes />
       <ReduxToastr
         timeOut={4000}
         newestOnTop={false}

@@ -33,24 +33,27 @@ function allReq() {
 }
 
 
-function commitReq(req_id) {
+function commitReq(req_id,token) {
   return (dispatch) => {
-    dispatch(request());
+    dispatch(request(req_id));
 
-    reqService.commitReq(req_id).then((resp) => {
+    reqService.commitReq(req_id,token).then((resp) => {
+      console.log("Commit response ------ ", resp);
       if (resp.status) {
-        dispatch(success(JSON.parse(resp.data)));
+        dispatch(success(resp.data));
+        dispatch(alertActions.success(resp.msg));
       } else {
         dispatch(failure(resp.msg));
+        dispatch(alertActions.error(resp.msg));
       }
     }).catch(err => {
       dispatch(alertActions.error(err.message));
     });
   };
-  function request() {
-    return {type: reqConstants.REQ_COMMIT_REQUEST};
+  function request(req_id) {
+    return {type: reqConstants.REQ_COMMIT_REQUEST, req_id};
   }
-  function success(allReqs) {
+  function success(data) {
     return {type: reqConstants.REQ_COMMIT_SUCCESS, data};
   }
   function failure(error) {

@@ -118,8 +118,6 @@ export const TeamSection = () => {
         <div className="flex flex-wrap">
           <TeamIndividual name="Manish Baghel" title="Software Developer" />
           <TeamIndividual name="Durga Shakti Nagpal" title="IAS Officer" />
-          <TeamIndividual name="Ravi Kant Singh" title="Software Developer" />
-          <TeamIndividual name="Vipul Vaibhav" title="Software Developer" />
         </div>
       </div>
     </section>

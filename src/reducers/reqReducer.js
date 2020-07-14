@@ -17,11 +17,11 @@ export function requirements(state = initialState, action) {
       return {};
     case reqConstants.REQ_COMMIT_REQUEST:
       return Object.assign({}, state, {
-        req_committing:action.payload.req_id
+        req_committing:action.req_id
       });
     case reqConstants.REQ_COMMIT_SUCCESS:
       return Object.assign({}, state, {
-        req_committed:action.payload.req_id
+        req_committed:action.data._id
       });
     case reqConstants.REQ_COMMIT_FAILURE:
       return state;
