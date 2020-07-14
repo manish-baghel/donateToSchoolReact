@@ -9,7 +9,6 @@ import Signup from "./Signup";
 import Requirements from "./Requirements";
 import RequirementPage from "./RequirementPage";
 import PrivateRoute from "./PrivateRoute";
-import {history} from "../configureStore";
 
 const Routes = (props) => {
   return (
