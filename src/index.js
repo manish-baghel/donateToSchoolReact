@@ -10,8 +10,6 @@ import configureStore, {history} from "./configureStore";
 
 const store = configureStore();
 
-console.log(process.env);
-
 ReactDom.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>

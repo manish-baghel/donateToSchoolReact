@@ -7,7 +7,7 @@ import Footer from "./Footer";
 const Requirement = (props) => {
   const {req} = props;
   return (
-    <a href={`${process.env.PUBLIC_URL}/req?id=${req._id}`}>
+    <a href={`/req?id=${req._id}`}>
     <div className="py-8 px-4 mb-4 flex shadow-xl border-b-2 border-gray-300 bg-gray-50 flex-wrap md:flex-no-wrap">
       <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span className="tracking-widest font-medium title-font text-gray-900">

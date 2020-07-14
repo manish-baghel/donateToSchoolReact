@@ -9,7 +9,7 @@ const Navlink = (props) => {
   let colorFocus =  /Login|Signup/.test(props.title) ? "text-indigo-900" : "text-gray-900";
   return (
     <a
-      href={process.env.PUBLIC_URL+props.link}
+      href={props.link}
       className={`mt-1 mr-3 block px-3 py-2 rounded-md text-base font-medium ${color}
       hover:${colorFocus} hover:bg-gray-50 focus:outline-none focus:${colorFocus}
       focus:bg-gray-50 transition duration-150 ease-in-out`}>
@@ -28,7 +28,7 @@ const NavbarComponent = (props) => {
         <nav className="relative flex items-center justify-between sm:h-14 lg:justify-start">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
-              <a href={process.env.PUBLIC_URL+"/"}>
+              <a href="/">
                 <img className="h-12 w-auto sm:h-14" src={Mainlogo} alt="" />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
