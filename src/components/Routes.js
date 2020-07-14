@@ -1,5 +1,5 @@
 import React from "react";
-import {Router, Route, Switch, Redirect} from "react-router-dom";
+import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import {history} from "../configureStore";
 import {connect} from "react-redux";
 import {alertActions} from "../actions/alertActions";
@@ -12,28 +12,28 @@ import PrivateRoute from "./PrivateRoute";
 
 const Routes = (props) => {
   return (
-    <Router history={history}>
+    <BrowserRouter  basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path={process.env.PUBLIC_URL+"/"}>
+        <Route exact path="/">
           <Landing />
         </Route>
-        <Route path={process.env.PUBLIC_URL+"/login"}>
+        <Route path="/login">
           <Login />
         </Route>
-        <Route path={process.env.PUBLIC_URL+"/signup"}>
+        <Route path="/signup">
           <Signup />
         </Route>
-        <Route path={process.env.PUBLIC_URL+"/requirements"}>
+        <Route path="/requirements">
           <Requirements category="requirement"/>
         </Route>
-        <Route path={process.env.PUBLIC_URL+"/volunteer"}>
+        <Route path="/volunteer">
           <Requirements category="volunteer"/>
         </Route>
-        <PrivateRoute path={process.env.PUBLIC_URL+"/req"} currentUser={props.currentUser}>
+        <PrivateRoute path="/req" currentUser={props.currentUser}>
           <RequirementPage />
         </PrivateRoute>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 
