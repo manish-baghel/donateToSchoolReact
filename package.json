@@ -6,13 +6,15 @@
   "scripts": {
     "parcel": "parcel src/index.html --out-dir docs --log-level 4",
     "parcel:serve": "parcel src/index.html --out-dir docs --log-level 4",
-    "parcel:build": "parcel build src/index.html --out-dir docs --no-source-maps --log-level 4",
+    "parcel:build": "parcel build src/index.html --out-dir build --no-source-maps --log-level 4",
     "parcel:build:gh": "parcel build src/index.html --out-dir docs --public-url https://manish-baghel.github.io/donateToSchoolReact --log-level 4",
     "clean": "rm -rf dist docs *.log",
     "start": "npm run clean && npm run parcel:serve",
     "start-nv": "ENV='dev' && npm run clean && npm run parcel",
     "build": "npm run clean && npm run parcel:build",
-    "build:gh": "npm run clean && npm run parcel:build:gh"
+    "build:gh": "npm run clean && npm run parcel:build:gh",
+    "predeploy":"npm run build:gh",
+    "deploy":"gh-pages -d docs"
   },
   "repository": {
     "type": "git",
@@ -54,6 +56,7 @@
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
     "@fullhuman/postcss-purgecss": "^2.2.0",
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
     "postcss-import": "^12.0.1",
     "postcss-modules": "^2.0.0"

@@ -17,19 +17,19 @@ const Routes = (props) => {
         <Route exact path="/">
           <Landing />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path="/signup">
+        <Route exact path="/signup">
           <Signup />
         </Route>
-        <Route path="/requirements">
+        <Route exact path="/requirements">
           <Requirements category="requirement"/>
         </Route>
-        <Route path="/volunteer">
+        <Route exact path="/volunteer">
           <Requirements category="volunteer"/>
         </Route>
-        <PrivateRoute path="/req" currentUser={props.currentUser}>
+        <PrivateRoute exact path="/req" currentUser={props.currentUser}>
           <RequirementPage />
         </PrivateRoute>
       </Switch>
