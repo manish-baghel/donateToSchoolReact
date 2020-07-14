@@ -38,11 +38,17 @@ const Requirement = (props) => {
   );
 };
 
+const comparator = (a,b) => {
+  let a_time = new Date(a.createdAt).getTime();
+  let b_time = new Date(b.createdAt).getTime();
+  return a_time<b_time?1:-1;
+}
+
 const RequirementList = (props) => {
   const {allReqs} = props;
   return (
     <>
-      {allReqs && allReqs.filter(e => e.status=="active" && e.category==props.category).map((req, idx) => {
+      {allReqs && allReqs.filter(e => e.status=="active" && e.category==props.category).sort(comparator).map((req, idx) => {
         return <Requirement key={idx} req={req} />;
       })}
     </>
