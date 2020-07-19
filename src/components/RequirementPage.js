@@ -44,8 +44,8 @@ const ImageGallery = (props) => {
 
 const RequirementSection = (props) => {
   const {id, reqs, token} = props;
-  if(!id) return ( <></> );
-  console.log("props=====",props)
+  if (!id) return <></>;
+  console.log("props=====", props);
   const creq = reqs.find((e) => e._id == id);
   const images = creq.imgs.map((e) => {
     return {
@@ -76,7 +76,9 @@ const RequirementSection = (props) => {
         </div>
         <div className="py-2 row-span-2">
           <div className="grid grid-cols-4">
-            <button onClick={() => props.commitReq(id,token)} className="group relative col-start-4 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+            <button
+              onClick={() => props.commitReq(id, token)}
+              className="group relative col-start-4 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
               Commit
             </button>
           </div>
@@ -86,17 +88,16 @@ const RequirementSection = (props) => {
   );
 };
 
-
 function mapStateToProps(state) {
   return {
     id: state.router.location.query.id,
     reqs: state.requirements.allReqs,
-    token: state.authentication.user.token
+    token: state.authentication.user.token,
   };
 }
 
 const actionCreators = {
-  commitReq: reqActions.commitReq
+  commitReq: reqActions.commitReq,
 };
 
 const Requirement = connect(mapStateToProps, actionCreators)(RequirementSection);
@@ -113,4 +114,4 @@ const RequirementPage = (props) => {
     </div>
   );
 };
-export default connect(mapStateToProps,null)(RequirementPage);
+export default connect(mapStateToProps, null)(RequirementPage);
