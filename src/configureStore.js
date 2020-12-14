@@ -1,9 +1,9 @@
-import {createBrowserHistory} from 'history';
-import {applyMiddleware, compose, createStore } from 'redux';
-import {routerMiddleware} from 'connected-react-router';
-import createRootReducer from './reducers';
+import {createBrowserHistory} from "history";
+import {applyMiddleware, compose, createStore} from "redux";
+import {routerMiddleware} from "connected-react-router";
+import createRootReducer from "./reducers";
 import thunkMiddleware from "redux-thunk";
-import { createLogger } from "redux-logger";
+import {createLogger} from "redux-logger";
 
 const loggerMiddleware = createLogger();
 
@@ -21,6 +21,6 @@ export default function configureStore() {
         // other midllewares
       )
     )
-  )
+  );
   return store;
 }

@@ -1,5 +1,5 @@
-// const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
-const apiUrl = process.env.SERVER_URL;
+const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
+// const apiUrl = process.env.SERVER_URL;
 export const userService = {
   login,
   signup,

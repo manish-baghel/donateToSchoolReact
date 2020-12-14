@@ -10,7 +10,7 @@ export const LandingSection = (props) => {
   return (
     <section className="relative py-20">
       <div className="container mx-auto md:px-2 px-4 lg:px-4">
-        <div className={ `items-center flex flex-wrap ${direction}`}>
+        <div className={`items-center flex flex-wrap ${direction}`}>
           <div className="w-8/12 sm:w-5/12 lg:w-4/12 ml-auto mr-auto p-8">
             <img alt="..." className="max-w-full rounded-lg shadow-lg" src={imgUrl} />
           </div>

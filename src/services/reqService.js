@@ -1,5 +1,5 @@
-// const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
-const apiUrl = process.env.SERVER_URL;
+const apiUrl = process.env.SERVER_URL + ":" + process.env.SERVER_PORT;
+// const apiUrl = process.env.SERVER_URL;
 
 export const reqService = {
   allReq,
@@ -21,6 +21,8 @@ function allReq() {
       console.log(err);
     });
 }
+
+
 
 function commitReq(req_id, token) {
   const reqId = req_id;
